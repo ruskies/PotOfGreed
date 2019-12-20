@@ -1,0 +1,4 @@
+displayName = Duelist
+author = Webmilio, Skipping
+version = 1.0
+modReferences = WebmilioCommons@0.1.9.1
