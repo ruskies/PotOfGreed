@@ -6,7 +6,7 @@ namespace PotOfGreed.Cards.Behavior
 {
     public abstract class NormalCardBehavior
     {
-        public const int USE_TIME = 15;
+        public const int USE_TIME = 30;
 
 
         protected NormalCardBehavior(NormalCardUseBehavior useBehavior, 
@@ -20,9 +20,10 @@ namespace PotOfGreed.Cards.Behavior
         }
 
 
-        public virtual bool CanUseItem(POGPlayer pogPlayer) => UseBehavior.Has(NormalCardUseBehavior.Use);
+        public virtual bool CanUseItem(POGPlayer pogPlayer, CardDefinition definition) => 
+            UseBehavior.Has(NormalCardUseBehavior.Use) && pogPlayer.NormalCanUseCard(definition);
 
-        public virtual bool UseItem(POGPlayer pogPlayer) => true;
+        public virtual bool UseItem(POGPlayer pogPlayer, CardDefinition definition) => true;
 
 
         public NormalCardUseBehavior UseBehavior { get; }

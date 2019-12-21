@@ -15,6 +15,6 @@ namespace PotOfGreed.Cards.Behavior
         }
 
 
-        public override bool UseItem(POGPlayer pogPlayer) => _useItem(pogPlayer);
+        public override bool UseItem(POGPlayer pogPlayer, CardDefinition definition) => _useItem(pogPlayer);
     }
 }

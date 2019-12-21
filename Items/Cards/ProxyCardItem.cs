@@ -86,12 +86,12 @@ namespace PotOfGreed.Items.Cards
         }
 
 
-        public override bool CanUseItem(Player player) => Definition.NormalBehavior.CanUseItem(POGPlayer.Get(player));
+        public override bool CanUseItem(Player player) => Definition.NormalBehavior.CanUseItem(POGPlayer.Get(player), Definition);
 
         public override bool UseItem(Player player)
         {
             POGPlayer pogPlayer = POGPlayer.Get(player);
-            bool useItem = Definition.NormalBehavior.UseItem(pogPlayer);
+            bool useItem = Definition.NormalBehavior.UseItem(pogPlayer, Definition);
 
             if (useItem)
                 pogPlayer.NormalOnCardUsed(Definition);
